@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './reset.css';
 import './index.css';
 import App from './App';
+import Portfolio from './Portfolio';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+  <Switch>
+    	<Route path="/" exact={true} component={App} />
+    	<Route path="/portfolio" exact={true} component={Portfolio} />
+    </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
