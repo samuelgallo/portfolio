@@ -1,0 +1,48 @@
+.thumbnails {
+  margin: 10% 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    &:hover {
+      img {
+        opacity: 0.6;
+      }
+      .thumbnails-title {
+        bottom: 50%;
+      }
+    }
+  }
+
+  div {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 80px;
+
+    @media screen and (min-width: 1200px) {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+  img {
+    transition: all ease-in-out 0.3s;
+    opacity: 1;
+  }
+
+  &-title {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: $default;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    bottom: -50px;
+    transition: all ease-in-out 0.3s;
+    position: absolute;
+  }
+}

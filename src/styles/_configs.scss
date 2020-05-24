@@ -1,0 +1,19 @@
+$default: #333;
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: $default;
+}
+.main {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @media screen and(min-width: 1200px) {
+    padding: 0;
+  }
+}
