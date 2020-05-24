@@ -1,22 +1,36 @@
 <?php
 
+// Mysql connection data
 $servername = "localhost";
-$username   = "root";
+$username   = "";
 $password   = "";
-$dbname     = "portfolio";
+$dbname     = "";
 
-// Create connection
+// create mysql connection
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $conn = new mysqli($servername, $username, $password, $dbname);
 $conn->set_charset('utf8');
 
-$sql = "SELECT * FROM data";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $rows = $result->fetch_all(MYSQLI_ASSOC);
-
-    echo json_encode($rows);
-} else {
-    echo "no results found";
+// check if have url params
+if(isset($_GET['hash']))
+{
+  // get data by url hash
+  $query="SELECT * FROM portfolio WHERE hash='".$_GET['hash']."'";
+}else{
+  // get all data
+  $query="SELECT * FROM portfolio";
 }
+ 
+// query data
+$result=$conn->query($query)
+	or die ($conn->error);
+
+// data array
+$data = array();
+
+while($row=$result->fetch_assoc()){ 
+  // push data to array
+  $data[] = $row; 
+} 
+// show data json
+echo json_encode($data);
