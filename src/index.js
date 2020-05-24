@@ -10,7 +10,6 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact={true} component={App} />
-
       <Route path='/:handle' component={Portfolio} />
     </Switch>
   </BrowserRouter>,
