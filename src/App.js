@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Header from './components/partials/Header';
 import Hero from './components/hero/Hero';
 import Projects from './components/projects/Projects';

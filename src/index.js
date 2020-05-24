@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-//import Projects from './Projects';
+import Portfolio from './components/portfolio/Portfolio';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.scss'
@@ -10,7 +10,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact={true} component={App} />
-      {/* <Route path="/portfolio" exact={true} component={Projects} /> */}
+
+      <Route path='/:handle' component={Portfolio} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
